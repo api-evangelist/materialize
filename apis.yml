@@ -1,0 +1,29 @@
+aid: materialize
+url: https://raw.githubusercontent.com/api-evangelist/materialize/refs/heads/main/apis.yml
+name: Materialize
+x-type: company
+description: >-
+  Materialize is a real-time streaming SQL database that maintains up-to-date materialized views over change streams from Postgres, Kafka, and other sources.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Data
+  - Streaming
+  - SQL
+  - Real-Time
+  - PostgreSQL
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://materialize.com/
+  - type: Plans
+    url: plans/materialize-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/materialize-rate-limits.yml
+  - type: FinOps
+    url: finops/materialize-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
