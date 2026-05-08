@@ -3,21 +3,62 @@ url: https://raw.githubusercontent.com/api-evangelist/materialize/refs/heads/mai
 name: Materialize
 x-type: company
 description: >-
-  Materialize is a real-time streaming SQL database that maintains up-to-date materialized views over change streams from Postgres, Kafka, and other sources.
+  Materialize is an operational data warehouse that uses streaming SQL views maintained
+  with sub-second latency. It exposes a PostgreSQL wire-compatible interface and a
+  session-less HTTP API for SQL execution.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Data
   - Streaming
+  - Data Warehouse
   - SQL
   - Real-Time
-  - PostgreSQL
+  - PostgreSQL Compatible
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: materialize:materialize-http-api
+    name: Materialize HTTP API
+    humanURL: https://materialize.com/docs/integrations/http-api/
+    baseURL: https://{mz_host}/api/sql
+    tags:
+      - SQL
+      - HTTP
+      - Streaming
+    description: >-
+      Session-less HTTP API for executing SQL statements against a Materialize region.
+      Authenticates with HTTP Basic (email + app password). Supports a simple mode with
+      a single query and an extended mode that submits an array of queries, each with
+      optional parameters. Does not support session-bound statements such as SUBSCRIBE,
+      DECLARE, FETCH, or COPY.
+    properties:
+      - type: Documentation
+        url: https://materialize.com/docs/integrations/http-api/
+      - type: Authentication
+        url: https://materialize.com/docs/manage/access-control/
+  - aid: materialize:materialize-pgwire
+    name: Materialize PostgreSQL Wire Protocol
+    humanURL: https://materialize.com/docs/integrations/
+    baseURL: postgres://{user}@{mz_host}:6875/materialize
+    tags:
+      - SQL
+      - PostgreSQL
+      - psql
+      - Wire Protocol
+    description: >-
+      Materialize speaks the PostgreSQL wire protocol on port 6875, so any psql or
+      libpq-based client (Go, Java, Node.js, PHP, Python, Ruby, Rust) can connect and
+      run streaming SQL.
+    properties:
+      - type: Documentation
+        url: https://materialize.com/docs/integrations/
 common:
   - type: Website
     url: https://materialize.com/
+  - type: Portal
+    url: https://materialize.com/docs/
+  - type: Pricing
+    url: https://materialize.com/pricing
   - type: Plans
     url: plans/materialize-plans-pricing.yml
   - type: RateLimits
