@@ -1,7 +1,7 @@
 aid: materialize
 url: https://raw.githubusercontent.com/api-evangelist/materialize/refs/heads/main/apis.yml
 name: Materialize
-x-type: company
+kind: company
 description: >-
   Materialize is an operational data warehouse that uses streaming SQL views maintained
   with sub-second latency. It exposes a PostgreSQL wire-compatible interface and a
