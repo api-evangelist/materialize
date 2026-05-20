@@ -53,6 +53,10 @@ apis:
       - type: Documentation
         url: https://materialize.com/docs/integrations/
 common:
+  - type: GitHubOrganization
+    url: https://github.com/MaterializeInc
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/materializeinc
   - type: Website
     url: https://materialize.com/
   - type: Portal
