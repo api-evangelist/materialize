@@ -14,7 +14,7 @@ tags:
   - Real-Time
   - PostgreSQL Compatible
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-29'
 specificationVersion: '0.19'
 apis:
   - aid: materialize:materialize-http-api
@@ -52,6 +52,35 @@ apis:
     properties:
       - type: Documentation
         url: https://materialize.com/docs/integrations/
+  - aid: materialize:materialize-streaming-asyncapi
+    name: Materialize Streaming Sources and Sinks (AsyncAPI)
+    humanURL: https://materialize.com/docs/sql/create-source/
+    baseURL: https://materialize.com/docs/
+    tags:
+      - Streaming
+      - Kafka
+      - Webhooks
+      - AsyncAPI
+      - Sources
+      - Sinks
+    description: >-
+      AsyncAPI 2.6 description of Materialize's event-driven integration surface:
+      Kafka sources (CREATE SOURCE ... FROM KAFKA), Kafka sinks (CREATE SINK ...
+      INTO KAFKA), and HTTP webhook sources (CREATE SOURCE ... FROM WEBHOOK).
+      SUBSCRIBE is documented in the spec as an informational pgwire server only;
+      AsyncAPI 2.6 has no standard binding for the PostgreSQL wire protocol, so
+      it is intentionally not modelled as a channel.
+    properties:
+      - type: AsyncAPI
+        url: asyncapi/materialize-asyncapi.yml
+      - type: Documentation
+        url: https://materialize.com/docs/sql/create-source/kafka/
+      - type: Documentation
+        url: https://materialize.com/docs/sql/create-sink/kafka/
+      - type: Documentation
+        url: https://materialize.com/docs/sql/create-source/webhook/
+      - type: Documentation
+        url: https://materialize.com/docs/sql/subscribe/
 common:
   - type: GitHubOrganization
     url: https://github.com/MaterializeInc
