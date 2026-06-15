@@ -1,0 +1,287 @@
+{
+  "item": [
+    {
+      "id": "6c42ec40-2502-47a5-a812-c18092e94a47",
+      "name": "Execute SQL statements",
+      "request": {
+        "name": "Execute SQL statements",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "sql"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "options",
+              "value": "<string>",
+              "description": "URL-encoded JSON object of session configuration parameters\n(e.g. `cluster`, `application_name`).\n"
+            }
+          ],
+          "variable": [
+            {
+              "description": "The hostname of your Materialize region.",
+              "type": "any",
+              "value": "{{mz_host}}",
+              "key": "mz_host"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "ed246e5a-3df4-412e-911a-37e921993d0f",
+          "name": "Query results.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "sql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "options",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The hostname of your Materialize region.",
+                  "type": "any",
+                  "value": "{{mz_host}}",
+                  "key": "mz_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9e57aea2-b7bf-4ce0-bd83-e6284b3324e2",
+          "name": "Bad request.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "sql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "options",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The hostname of your Materialize region.",
+                  "type": "any",
+                  "value": "{{mz_host}}",
+                  "key": "mz_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "0a3302bd-6568-4238-8df2-f2064aa99836",
+          "name": "Authentication failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "sql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "options",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The hostname of your Materialize region.",
+                  "type": "any",
+                  "value": "{{mz_host}}",
+                  "key": "mz_host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: basic",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Basic <credentials>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The hostname of your Materialize region.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "REGION.materialize.com",
+      "key": "mz_host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{mz_host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "675fd13f-bc4a-479d-a291-a2509182d0b0",
+    "name": "Materialize HTTP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Session-less HTTP API for executing SQL statements against a Materialize\nregion. Supports a simple mode (single query string) and an extended mode\n(array of parameterized queries). Session-bound statements such as\nSUBSCRIBE, DECLARE, FETCH, and COPY are not supported over HTTP.\n\n\nContact Support:\n Name: Materialize",
+      "type": "text/plain"
+    }
+  }
+}

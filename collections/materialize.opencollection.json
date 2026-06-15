@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Materialize HTTP API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Execute SQL statements",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://{mz_host}/api/sql",
+        "params": [
+          {
+            "name": "options",
+            "value": "",
+            "type": "query",
+            "description": "URL-encoded JSON object of session configuration parameters\n(e.g. `cluster`, `application_name`).\n"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Execute SQL statements"
+    }
+  ],
+  "bundled": true
+}
