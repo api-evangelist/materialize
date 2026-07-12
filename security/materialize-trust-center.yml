@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://materialize.com/product/security/
+url: https://materialize.com/product/security/
+certifications:
+- SOC 2
+evidence:
+- source: https://materialize.com/product/security/
+  keywords:
+  - soc 2
+  - trust center

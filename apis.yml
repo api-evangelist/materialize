@@ -82,6 +82,12 @@ apis:
       - type: Documentation
         url: https://materialize.com/docs/sql/subscribe/
 common:
+  - type: TrustCenter
+    url: security/materialize-trust-center.yml
+  - type: DomainSecurity
+    url: security/materialize-domain-security.yml
+  - type: Authentication
+    url: authentication/materialize-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/MaterializeInc
   - type: LinkedIn
@@ -98,6 +104,8 @@ common:
     url: rate-limits/materialize-rate-limits.yml
   - type: FinOps
     url: finops/materialize-finops.yml
+  - url: https://materialize.com/rss.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

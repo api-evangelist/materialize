@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/materialize-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BasicAuth
+  type: http
+  scheme: basic
+  description: |-
+    HTTP Basic authentication using your Materialize email as the username
+    and an app password as the password.
+  sources:
+  - openapi/materialize-openapi.yml
