@@ -82,6 +82,8 @@ apis:
       - type: Documentation
         url: https://materialize.com/docs/sql/subscribe/
 common:
+  - type: AgenticAccess
+    url: agentic-access/materialize-agentic-access.yml
   - type: TrustCenter
     url: security/materialize-trust-center.yml
   - type: DomainSecurity
