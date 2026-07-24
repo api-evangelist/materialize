@@ -1,46 +1,54 @@
 openapi: 3.1.0
 info:
-  title: Materialize HTTP API
+  title: Materialize HTTP Sql API
   version: v1
-  description: |
-    Session-less HTTP API for executing SQL statements against a Materialize
+  description: 'Session-less HTTP API for executing SQL statements against a Materialize
+
     region. Supports a simple mode (single query string) and an extended mode
+
     (array of parameterized queries). Session-bound statements such as
+
     SUBSCRIBE, DECLARE, FETCH, and COPY are not supported over HTTP.
+
+    '
   contact:
     name: Materialize
     url: https://materialize.com
 servers:
-  - url: https://{mz_host}
-    description: Materialize region host
-    variables:
-      mz_host:
-        default: REGION.materialize.com
-        description: The hostname of your Materialize region.
+- url: https://{mz_host}
+  description: Materialize region host
+  variables:
+    mz_host:
+      default: REGION.materialize.com
+      description: The hostname of your Materialize region.
 security:
-  - BasicAuth: []
+- BasicAuth: []
+tags:
+- name: Sql
 paths:
   /api/sql:
     post:
       summary: Execute SQL statements
       operationId: executeSql
       parameters:
-        - in: query
-          name: options
-          required: false
-          schema:
-            type: string
-          description: |
-            URL-encoded JSON object of session configuration parameters
-            (e.g. `cluster`, `application_name`).
+      - in: query
+        name: options
+        required: false
+        schema:
+          type: string
+        description: 'URL-encoded JSON object of session configuration parameters
+
+          (e.g. `cluster`, `application_name`).
+
+          '
       requestBody:
         required: true
         content:
           application/json:
             schema:
               oneOf:
-                - $ref: '#/components/schemas/SimpleRequest'
-                - $ref: '#/components/schemas/ExtendedRequest'
+              - $ref: '#/components/schemas/SimpleRequest'
+              - $ref: '#/components/schemas/ExtendedRequest'
       responses:
         '200':
           description: Query results.
@@ -57,36 +65,45 @@ paths:
           description: Bad request.
         '401':
           description: Authentication failed.
+      tags:
+      - Sql
 components:
-  securitySchemes:
-    BasicAuth:
-      type: http
-      scheme: basic
-      description: |
-        HTTP Basic authentication using your Materialize email as the username
-        and an app password as the password.
   schemas:
     SimpleRequest:
       type: object
-      required: [query]
+      required:
+      - query
       properties:
         query:
           type: string
           description: A SQL string (may contain multiple statements separated by semicolons).
     ExtendedRequest:
       type: object
-      required: [queries]
+      required:
+      - queries
       properties:
         queries:
           type: array
           items:
             type: object
-            required: [query]
+            required:
+            - query
             properties:
               query:
                 type: string
               params:
                 type: array
                 items:
-                  type: [string, 'null']
+                  type:
+                  - string
+                  - 'null'
                 description: Positional parameters for the prepared query.
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: 'HTTP Basic authentication using your Materialize email as the username
+
+        and an app password as the password.
+
+        '
