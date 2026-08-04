@@ -1,0 +1,14 @@
+{
+  "provider": "materialize",
+  "sources": [
+    "materialize-sql-api-openapi.yml"
+  ],
+  "outputs": [
+    "materialize-sql-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
