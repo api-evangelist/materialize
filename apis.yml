@@ -70,6 +70,13 @@ apis:
   tags:
   - Streaming
   - Kafka
+  - Webhook
+  - AsyncAPI
+  - Sources
+  - Sinks
+  tags_raw:
+  - Streaming
+  - Kafka
   - Webhooks
   - AsyncAPI
   - Sources
@@ -97,6 +104,8 @@ apis:
   humanURL: https://materialize.com/docs/integrations/http-api/
   baseURL: https://{mz_host}/api/sql
   tags:
+  - SQL
+  tags_raw:
   - Sql
   properties:
   - type: OpenAPI
