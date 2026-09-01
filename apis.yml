@@ -116,7 +116,7 @@ apis:
   humanURL: https://materialize.com/docs/integrations/http-api/
   baseURL: https://{mz_host}/api/sql
   tags:
-  - Sql
+  - SQL
   tags_raw:
   - Sql
   properties:
