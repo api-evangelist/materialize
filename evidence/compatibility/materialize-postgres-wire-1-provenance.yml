@@ -1,0 +1,14 @@
+fetched: '2026-10-13'
+method: fetched
+source: https://raw.githubusercontent.com/MaterializeInc/materialize/main/README.md
+page: https://raw.githubusercontent.com/MaterializeInc/materialize/main/README.md
+file: materialize-postgres-wire-1.md
+bytes: 9513
+sha256: 1409d5551c7dcbf2deea66cbf577fd64761f22dcfa665f96f7a0ee720f9fda54
+anchor: postgresql
+shape: postgres-wire
+classification: declares-compatibility
+quote: Once you've got the data in, define views and perform reads via the PostgreSQL protocol. Use your favorite
+  SQL client, including the `psql` you probably already have on your system. Customers using Materialize in production
+  tend to use [dbt Core](https://www.getdbt.com/).
+note: text extracted from the provider's own page (tags stripped), saved for evidence
