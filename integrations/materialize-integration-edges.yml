@@ -16,5 +16,26 @@ edges:
     tend to use [dbt
   detected_by: sweep-shape-compat.py
   first_seen: '2026-10-13'
+- partner_name: Hightouch
+  partner: hightouch
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://hightouch.com/docs/sources/materialize
+  coverage_role:
+  - source
+  cdp_signals:
+    source:
+      catalog_entries:
+      - materialize
+      status: released
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
 generated: '2026-10-13'
 method: searched
+checked:
+- https://hightouch.com/docs/sources/materialize
+source: https://hightouch.com/docs/sources/materialize
