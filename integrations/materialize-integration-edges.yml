@@ -1,21 +1,4 @@
 edges:
-- partner_name: PostgreSQL
-  partner: postgresql
-  partner_match: shape-anchor
-  channel: provider-built
-  relationship: compatible
-  direction: provider-built
-  shape: postgres-wire
-  type: docs
-  degree: declared-unqualified
-  evidence: https://raw.githubusercontent.com/MaterializeInc/materialize/main/README.md
-  evidence_kind: own-docs
-  evidence_file: https://github.com/api-evangelist/materialize/blob/main/evidence/compatibility/materialize-postgres-wire-1.md
-  quote: Once you've got the data in, define views and perform reads via the PostgreSQL protocol. Use your favorite
-    SQL client, including the `psql` you probably already have on your system. Customers using Materialize in production
-    tend to use [dbt
-  detected_by: sweep-shape-compat.py
-  first_seen: '2026-10-13'
 - partner_name: Hightouch
   partner: hightouch
   partner_match: aggregator
@@ -34,6 +17,23 @@ edges:
       status: released
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
+- partner_name: PostgreSQL
+  partner: postgresql
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: postgres-wire
+  type: docs
+  degree: declared-unqualified
+  evidence: https://raw.githubusercontent.com/MaterializeInc/materialize/main/README.md
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/materialize/blob/main/evidence/compatibility/materialize-postgres-wire-1.md
+  quote: Once you've got the data in, define views and perform reads via the PostgreSQL protocol. Use your favorite
+    SQL client, including the `psql` you probably already have on your system. Customers using Materialize in production
+    tend to use [dbt
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
 generated: '2026-10-13'
 method: searched
 checked:
