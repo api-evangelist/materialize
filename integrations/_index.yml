@@ -26,3 +26,29 @@
   relationship: compatible
   status: not-a-workflow
   arazzo: null
+- slug: materialize-dbt-dbt-package-hub
+  label: dbt (dbt-package-hub)
+  partner: dbt
+  partner_name: dbt (dbt-package-hub)
+  category: dbt package
+  type: marketplace
+  marketplace: dbt-package-hub
+  channel: partner-built
+  evidence: https://hub.getdbt.com/MaterializeInc/materialize_dbt_utils/latest/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: materialize-fivetran-fivetran-connectors
+  label: Fivetran (fivetran-connectors)
+  partner: fivetran
+  partner_name: Fivetran (fivetran-connectors)
+  category: data integration
+  type: marketplace
+  marketplace: fivetran-connectors
+  channel: partner-built
+  evidence: https://fivetran.com/docs/destinations/materialize
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

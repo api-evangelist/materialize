@@ -34,8 +34,44 @@ edges:
     tend to use [dbt
   detected_by: sweep-shape-compat.py
   first_seen: '2026-10-13'
+- partner_name: dbt (dbt-package-hub)
+  partner: dbt
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: dbt-package-hub
+  evidence: https://hub.getdbt.com/MaterializeInc/materialize_dbt_utils/latest/
+  mirror_of: dbt/integrations/dbt-integration-edges.yml
+  apps:
+  - Materialize, Inc.
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: dbt package
+- partner_name: Fivetran (fivetran-connectors)
+  partner: fivetran
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: fivetran-connectors
+  evidence: https://fivetran.com/docs/destinations/materialize
+  mirror_of: fivetran/integrations/fivetran-integration-edges.yml
+  apps:
+  - Materialize
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: data integration
 generated: '2026-10-13'
 method: searched
 checked:
+- dbt/integrations/dbt-integration-edges.yml
+- fivetran/integrations/fivetran-integration-edges.yml
 - https://hightouch.com/docs/sources/materialize
 source: https://hightouch.com/docs/sources/materialize
