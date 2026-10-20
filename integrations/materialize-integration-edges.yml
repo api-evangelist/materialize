@@ -1,4 +1,21 @@
 edges:
+- partner_name: PostgreSQL
+  partner: postgresql
+  partner_match: shape-anchor
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  shape: postgres-wire
+  type: docs
+  degree: declared-unqualified
+  evidence: https://raw.githubusercontent.com/MaterializeInc/materialize/main/README.md
+  evidence_kind: own-docs
+  evidence_file: https://github.com/api-evangelist/materialize/blob/main/evidence/compatibility/materialize-postgres-wire-1.md
+  quote: Once you've got the data in, define views and perform reads via the PostgreSQL protocol. Use your favorite
+    SQL client, including the `psql` you probably already have on your system. Customers using Materialize in production
+    tend to use [dbt
+  detected_by: sweep-shape-compat.py
+  first_seen: '2026-10-13'
 - partner_name: Hightouch
   partner: hightouch
   partner_match: aggregator
@@ -17,23 +34,6 @@ edges:
       status: released
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
-- partner_name: PostgreSQL
-  partner: postgresql
-  partner_match: shape-anchor
-  channel: provider-built
-  relationship: compatible
-  direction: provider-built
-  shape: postgres-wire
-  type: docs
-  degree: declared-unqualified
-  evidence: https://raw.githubusercontent.com/MaterializeInc/materialize/main/README.md
-  evidence_kind: own-docs
-  evidence_file: https://github.com/api-evangelist/materialize/blob/main/evidence/compatibility/materialize-postgres-wire-1.md
-  quote: Once you've got the data in, define views and perform reads via the PostgreSQL protocol. Use your favorite
-    SQL client, including the `psql` you probably already have on your system. Customers using Materialize in production
-    tend to use [dbt
-  detected_by: sweep-shape-compat.py
-  first_seen: '2026-10-13'
 - partner_name: dbt (dbt-package-hub)
   partner: dbt
   partner_match: mirror
@@ -68,10 +68,127 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: data integration
+- partner_name: Metabase (own)
+  partner: metabase
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://github.com/MaterializeInc/metabase-materialize-driver
+  mirror_of: metabase/integrations/metabase-integration-edges.yml
+  apps:
+  - Materialize driver
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+  category: database driver
+- partner_name: Agent Skills (own GitHub org)
+  partner: null
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: Agent Skills package
+  evidence: https://github.com/MaterializeInc/agent-skills
+  channel: provider-built
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: own-repo
+  degree: skill-repo
+  report_only: true
+  agent_skills:
+    org: materializeinc
+    current: true
+    repos:
+    - repo: MaterializeInc/agent-skills
+      archived: false
+      lapsed: false
+      pushed: '2026-10-20'
+  contract_reference:
+    register: 'provider''s own GitHub org (GitHub REST API: repo + git tree holds SKILL.md)'
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-repo
+    matched_org: materializeinc
+    matched_by: org-profile-domain:materialize.com
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
+- partner_name: skills.sh
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: Agent Skills register
+  evidence: https://www.skills.sh/materializeinc/agent-skills
+  channel: standard-directory
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: register-listing
+  degree: listed
+  report_only: true
+  agent_skills_register:
+    repos:
+    - materializeinc/agent-skills
+    repo_verified: true
+    signal_note: the provider's own-org repos the register lists; skill / install counts never read
+  contract_reference:
+    register: skills.sh (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: materializeinc
+    matched_by: org-profile-domain:materialize.com
+    sample_skills:
+    - materialize-docs
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
+- partner_name: SkillsMP (skillsmp.com)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: Agent Skills register
+  evidence: https://skillsmp.com/creators/materializeinc
+  channel: standard-directory
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: register-listing
+  degree: listed
+  report_only: true
+  agent_skills_register:
+    repos:
+    - materializeinc
+    repo_verified: false
+    signal_note: the provider's own-org repos the register lists; skill / install counts never read
+  contract_reference:
+    register: SkillsMP (skillsmp.com) (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: materializeinc
+    matched_by: org-profile-domain:materialize.com
+    sample_skills: []
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
 generated: '2026-10-13'
 method: searched
 checked:
 - dbt/integrations/dbt-integration-edges.yml
 - fivetran/integrations/fivetran-integration-edges.yml
 - https://hightouch.com/docs/sources/materialize
+- metabase/integrations/metabase-integration-edges.yml
+- https://api.github.com
+- https://claude-plugins.dev/sitemap.xml
+- https://github.com/VoltAgent/awesome-agent-skills
+- https://officialskills.sh/sitemap.xml
+- https://skillsmp.com/sitemap.xml
+- https://www.skills.sh/sitemap.xml
 source: https://hightouch.com/docs/sources/materialize
