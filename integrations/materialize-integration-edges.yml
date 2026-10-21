@@ -34,57 +34,6 @@ edges:
       status: released
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
-- partner_name: dbt (dbt-package-hub)
-  partner: dbt
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: dbt-package-hub
-  evidence: https://hub.getdbt.com/MaterializeInc/materialize_dbt_utils/latest/
-  mirror_of: dbt/integrations/dbt-integration-edges.yml
-  apps:
-  - Materialize, Inc.
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: dbt package
-- partner_name: Fivetran (fivetran-connectors)
-  partner: fivetran
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: fivetran-connectors
-  evidence: https://fivetran.com/docs/destinations/materialize
-  mirror_of: fivetran/integrations/fivetran-integration-edges.yml
-  apps:
-  - Materialize
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: data integration
-- partner_name: Metabase (own)
-  partner: metabase
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://github.com/MaterializeInc/metabase-materialize-driver
-  mirror_of: metabase/integrations/metabase-integration-edges.yml
-  apps:
-  - Materialize driver
-  listing_count: 1
-  detected: '2026-10-19'
-  detected_by: mirror-platform-listings.py
-  category: database driver
 - partner_name: Agent Skills (own GitHub org)
   partner: null
   partner_match: register
@@ -178,6 +127,96 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-agent-skills.py
   first_seen: '2026-10-20'
+- partner_name: dbt (dbt-package-hub)
+  partner: dbt
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: dbt-package-hub
+  evidence: https://hub.getdbt.com/MaterializeInc/materialize_dbt_utils/latest/
+  mirror_of: dbt/integrations/dbt-integration-edges.yml
+  apps:
+  - Materialize, Inc.
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: dbt package
+- partner_name: Fivetran (fivetran-connectors)
+  partner: fivetran
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: fivetran-connectors
+  evidence: https://fivetran.com/docs/destinations/materialize
+  mirror_of: fivetran/integrations/fivetran-integration-edges.yml
+  apps:
+  - Materialize
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: data integration
+- partner_name: Metabase (own)
+  partner: metabase
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://github.com/MaterializeInc/metabase-materialize-driver
+  mirror_of: metabase/integrations/metabase-integration-edges.yml
+  apps:
+  - Materialize driver
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+  category: database driver
+- partner_name: OpenTofu (opentofu-registry)
+  partner: opentofu
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: opentofu-registry
+  evidence: https://search.opentofu.org/provider/materializeinc/materialize
+  mirror_of: opentofu/integrations/opentofu-integration-edges.yml
+  apps:
+  - materializeinc/materialize
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Terraform (terraform-registry)
+  partner: terraform
+  partner_match: mirror
+  mirror_match: register
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: terraform-registry
+  evidence: https://registry.terraform.io/providers/MaterializeInc/materialize
+  mirror_of: terraform/integrations/terraform-integration-edges.yml
+  apps:
+  - MaterializeInc/materialize
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
+  badges:
+  - Verified publisher (Terraform partner tier)
+  - Verified publisher (GitHub domain-verified organization)
 generated: '2026-10-13'
 method: searched
 checked:
@@ -191,4 +230,6 @@ checked:
 - https://officialskills.sh/sitemap.xml
 - https://skillsmp.com/sitemap.xml
 - https://www.skills.sh/sitemap.xml
+- opentofu/integrations/opentofu-integration-edges.yml
+- terraform/integrations/terraform-integration-edges.yml
 source: https://hightouch.com/docs/sources/materialize
