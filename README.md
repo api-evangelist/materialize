@@ -1,4 +1,4 @@
-# Materialize (materialize)
+# Materialize
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,101 +66,140 @@
 
 Materialize is an operational data warehouse that uses streaming SQL views maintained with sub-second latency. It exposes a PostgreSQL wire-compatible interface and a session-less HTTP API for SQL execution.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/materialize/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/materialize/refs/heads/main/apis.yml)
+**Areas:** Streaming · Data Warehouse · SQL · Real-Time · PostgreSQL Compatible
 
-## Tags
+## Materialize on APIs.io
 
-- Streaming
-- Data Warehouse
-- SQL
-- Real-Time
-- PostgreSQL Compatible
+Everything profiled for Materialize is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/materialize/](https://apis.io/providers/materialize/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (4)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-29
+- [Materialize HTTP API](https://apis.io/apis/materialize/materialize-http-api/) — Session-less HTTP API for executing SQL statements against a Materialize region. Authenticates with HTTP Basic (email + app password). Supports a simple…
+- [Materialize PostgreSQL Wire Protocol](https://apis.io/apis/materialize/materialize-pgwire/) — Materialize speaks the PostgreSQL wire protocol on port 6875, so any psql or libpq-based client (Go, Java, Node.js, PHP, Python, Ruby, Rust) can connect and…
+- [Materialize Streaming Sources and Sinks (AsyncAPI)](https://apis.io/apis/materialize/materialize-streaming-asyncapi/) — AsyncAPI 2.6 description of Materialize's event-driven integration surface: Kafka sources (CREATE SOURCE ... FROM KAFKA), Kafka sinks (CREATE SINK ... INTO…
+- [Materialize Sql API](https://apis.io/apis/materialize/materialize-sql-api/) — The Sql API from Materialize — 1 operation(s) for sql.
 
-## APIs
+### Published properties
 
-### Materialize HTTP API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Session-less HTTP API for executing SQL statements against a Materialize region. Authenticates with HTTP Basic (email + app password). Supports a simple mode with a single query and an extended mode that submits an array of queries, each with optional parameters. Does not support session-bound statements such as SUBSCRIBE, DECLARE, FETCH, or COPY.
+#### AsyncAPI (1)
 
-- **Human URL:** [https://materialize.com/docs/integrations/http-api/](https://materialize.com/docs/integrations/http-api/)
-- **Base URL:** `https://{mz_host}/api/sql`
+Event-driven and webhook contracts.
 
-#### Tags
+- [Materialize Streaming Sources and Sinks](https://apis.io/asyncapis/materialize/materialize-asyncapi/)
 
-- SQL
-- HTTP
-- Streaming
+#### Event channels (3)
 
-#### Properties
+Individual events and webhooks the provider emits.
 
-- [Documentation](https://materialize.com/docs/integrations/http-api/)
-- [Authentication](https://materialize.com/docs/manage/access-control/)
-- [Postman Collection](collections/materialize.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/materialize.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [api/webhook/{database}/{schema}/{src_name}](https://apis.io/channels/materialize/api-webhook-database-schema-src-name/)
+- [kafka/sink/{topic}](https://apis.io/channels/materialize/kafka-sink-topic/)
+- [kafka/source/{topic}](https://apis.io/channels/materialize/kafka-source-topic/)
 
-### Materialize PostgreSQL Wire Protocol
+#### Agentic access (1)
 
-Materialize speaks the PostgreSQL wire protocol on port 6875, so any psql or libpq-based client (Go, Java, Node.js, PHP, Python, Ruby, Rust) can connect and run streaming SQL.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://materialize.com/docs/integrations/](https://materialize.com/docs/integrations/)
-- **Base URL:** `postgres://{user}@{mz_host}:6875/materialize`
+- [Materialize Agentic Access](https://apis.io/agentic-access/materialize/materialize-agentic-access/)
 
-#### Tags
+#### Collections (2)
 
-- SQL
-- PostgreSQL
-- psql
-- Wire Protocol
+Postman and Open Collection request collections.
 
-#### Properties
+- [Materialize HTTP API](https://apis.io/collections/materialize/open-materialize/)
+- [Materialize HTTP Sql API](https://apis.io/collections/materialize/open-materialize-sql-api/)
 
-- [Documentation](https://materialize.com/docs/integrations/)
-- [Postman Collection](collections/materialize.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/materialize.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Governance rules (1)
 
-### Materialize Streaming Sources and Sinks (AsyncAPI)
+Spectral rulesets for the provider's contracts.
 
-AsyncAPI 2.6 description of Materialize's event-driven integration surface: Kafka sources (CREATE SOURCE ... FROM KAFKA), Kafka sinks (CREATE SINK ... INTO KAFKA), and HTTP webhook sources (CREATE SOURCE ... FROM WEBHOOK). SUBSCRIBE is documented in the spec as an informational pgwire server only; AsyncAPI 2.6 has no standard binding for the PostgreSQL wire protocol, so it is intentionally not modelled as a channel.
+- [Materialize — asyncapi rules](https://apis.io/rules/materialize/materialize-asyncapi-spectral-rules/)
 
-- **Human URL:** [https://materialize.com/docs/sql/create-source/](https://materialize.com/docs/sql/create-source/)
-- **Base URL:** `https://materialize.com/docs/`
+#### Security (3)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Streaming
-- Kafka
-- Webhooks
-- AsyncAPI
-- Sources
-- Sinks
+- [Materialize Authentication](https://apis.io/security/materialize/materialize-authentication/)
+- [Materialize Domain Security](https://apis.io/security/materialize/materialize-domain-security/)
+- [Materialize Trust Center](https://apis.io/security/materialize/materialize-trust-center/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [AsyncAPI](asyncapi/materialize-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Documentation](https://materialize.com/docs/sql/create-source/kafka/)
-- [Documentation](https://materialize.com/docs/sql/create-sink/kafka/)
-- [Documentation](https://materialize.com/docs/sql/create-source/webhook/)
-- [Documentation](https://materialize.com/docs/sql/subscribe/)
-- [Postman Collection](collections/materialize.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/materialize.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published plans, tiers and prices.
 
-## Common Properties
+- [Materialize Plans Pricing](https://apis.io/plans/materialize/materialize-plans-pricing/)
 
-- [GitHub Organization](https://github.com/MaterializeInc)
-- [LinkedIn](https://www.linkedin.com/company/materializeinc)
+#### Rate limits (1)
+
+Published request limits.
+
+- [Materialize Rate Limits](https://apis.io/rate-limits/materialize/materialize-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Materialize Finops](https://apis.io/finops/materialize/materialize-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://materialize.com/)
-- [Portal](https://materialize.com/docs/)
 - [Pricing](https://materialize.com/pricing)
-- [Plans](plans/materialize-plans-pricing.yml)
-- [Rate Limits](rate-limits/materialize-rate-limits.yml)
-- [Fin Ops](finops/materialize-finops.yml)
+- [Blog](https://materialize.com/rss.xml)
+- [GitHub](https://github.com/MaterializeInc)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 33.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 50.4 |
+| Contract governance | 11.4 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 26.3 |
+
+**Agent readiness 19.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/materialize/](https://apis.io/providers/materialize/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Materialize: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/materialize/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
